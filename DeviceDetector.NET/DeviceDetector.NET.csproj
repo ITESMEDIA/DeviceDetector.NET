@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>DeviceDetectorNET</RootNamespace>
-    <Version>4.1.0</Version>
+    <Version>4.1.0.1</Version>
     <Authors>totpero</Authors>
     <PackageLicenseExpression></PackageLicenseExpression>
     <Copyright>Copyright © www.totpe.ro</Copyright>
@@ -12,16 +12,12 @@
     <PackageProjectUrl>https://github.com/totpero/DeviceDetector.NET</PackageProjectUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.1</AssemblyVersion>
     <RepositoryUrl>https://github.com/totpero/DeviceDetector.NET</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="regexes\**\*" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="regexes\**\*" />
+    <EmbeddedResource Include="..\device-detector\regexes\**\*" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +29,30 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="regexes\client\" />
+    <Folder Include="regexes\device\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="..\device-detector\regexes\bots.yml" Link="regexes\bots.yml" />
+    <EmbeddedResource Update="..\device-detector\regexes\client\browsers.yml" Link="regexes\client\browsers.yml" />
+    <EmbeddedResource Update="..\device-detector\regexes\client\browser_engine.yml" Link="regexes\client\browser_engine.yml" />
+    <EmbeddedResource Update="..\device-detector\regexes\client\feed_readers.yml" Link="regexes\client\feed_readers.yml" />
+    <EmbeddedResource Update="..\device-detector\regexes\client\libraries.yml" Link="regexes\client\libraries.yml" />
+    <EmbeddedResource Update="..\device-detector\regexes\client\mediaplayers.yml" Link="regexes\client\mediaplayers.yml" />
+    <EmbeddedResource Update="..\device-detector\regexes\client\mobile_apps.yml" Link="regexes\client\mobile_apps.yml" />
+    <EmbeddedResource Update="..\device-detector\regexes\client\pim.yml" Link="regexes\client\pim.yml" />
+    <EmbeddedResource Update="..\device-detector\regexes\device\cameras.yml" Link="regexes\device\cameras.yml" />
+    <EmbeddedResource Update="..\device-detector\regexes\device\car_browsers.yml" Link="regexes\device\car_browsers.yml" />
+    <EmbeddedResource Update="..\device-detector\regexes\device\consoles.yml" Link="regexes\device\consoles.yml" />
+    <EmbeddedResource Update="..\device-detector\regexes\device\mobiles.yml" Link="regexes\device\mobiles.yml" />
+    <EmbeddedResource Update="..\device-detector\regexes\device\portable_media_player.yml" Link="regexes\device\portable_media_player.yml" />
+    <EmbeddedResource Update="..\device-detector\regexes\device\televisions.yml" Link="regexes\device\televisions.yml" />
+    <EmbeddedResource Update="..\device-detector\regexes\oss.yml" Link="regexes\oss.yml" />
+    <EmbeddedResource Update="..\device-detector\regexes\vendorfragments.yml" Link="regexes\vendorfragments.yml" />
   </ItemGroup>
 
 </Project>
